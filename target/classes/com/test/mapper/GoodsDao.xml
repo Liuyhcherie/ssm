@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.dao.GoodsDao">
+ <select id="findUserByID" parameterType="string" resultType="User">
+  SELECT * FROM user_info WHERE userid=#{userid}
+ </select>
+ 
+ <insert id="insertGoods" parameterType="com.test.bean.Goods" >
+ 	insert into goods(goodsid,goodsname,price,goodsdesc,goodsjpg) 
+ 	values (#{goodsid},#{goodsname},#{price},#{goodsdesc},#{goodsjpg})
+ </insert>
+ 
+</mapper>
